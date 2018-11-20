@@ -1,0 +1,30 @@
+...
+import PersistComponent from '@wicked_query/ultimatejs/lib/redux-persist-component/PersistComponent';
+import PersistServer from '@wicked_query/ultimatejs/lib/redux-persist-component/PersistServer';
+import {CookieStorage} from '@wicked_query/ultimatejs/lib/redux-persist-cookie-storage';
+import CookiesJS from 'cookies-js';
+...
+
+const cookiesStorage = new CookieStorage(CookiesJS, {
+  setCookieOptions: {
+    path: '/'
+  }
+});
+
+const restoreState = PersistServer({
+      store,
+      storage: cookiesStorage,
+      modules: ['auth']
+    });
+
+restoreState.then(() => {
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <PersistComponent storage={cookiesStorage} modules={['auth']}>
+        <YOUR APP />
+      </PersistComponent>
+    </Provider>,
+    dest
+  );
+});
+

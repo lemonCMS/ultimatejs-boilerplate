@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "IE >= 9"],
+          "node": "current"
+        },
+        "useBuiltIns": "entry"
+      }
+    ],
+    "razzle/babel"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "react-loadable/babel"
+  ]
+}

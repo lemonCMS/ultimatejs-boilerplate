@@ -1,0 +1,13 @@
+...
+import PersistServer from '@wicked_query/ultimatejs/lib/redux-persist-component/PersistComponent';
+...
+
+ReactDOM.hydrate(
+  <Provider store={store}>
+    <PersistComponent storage={localForage} modules={['counters']}>
+      <YOUR APP />
+    </PersistComponent>
+  </Provider>,
+  dest
+);
+
