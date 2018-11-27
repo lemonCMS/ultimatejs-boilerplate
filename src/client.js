@@ -12,6 +12,7 @@ import {
 } from './redux/store/counter';
 import initializeStore from './redux/store';
 import routes from './routes';
+import ErrorPage from './containers/Error';
 
 const cookiesStorage = new CookieStorage(CookiesJS, {
   setCookieOptions: {
@@ -53,6 +54,7 @@ const cookiesStorage = new CookieStorage(CookiesJS, {
     { initializeStore, state, providers },
     reduxWrapper,
     awaitRender,
+    ErrorPage
   );
 
   if (module.hot) {

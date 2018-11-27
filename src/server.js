@@ -3,15 +3,18 @@ import {
   NodeCookiesWrapper,
 } from 'redux-persist-cookie-storage';
 import Cookies from 'cookies';
+import paths from 'razzle/config/paths'
+import express from 'express';
 import server, { render } from '@wicked_query/ultimatejs/lib/ultimate/server';
 import PersistServer from '@wicked_query/ultimatejs/lib/persist-component/PersistServer';
 import initializeStore from './redux/store';
 import routes from './routes';
 import stats from '../build/react-loadable.json';
 import { saveAndRestoreCookie } from './redux/store/counter';
+import ErrorPage from './containers/Error';
 
 server.use(Cookies.express());
-// server.use(express.static(paths.appPublic));
+server.use(express.static(paths.appPublic));
 // const dev = process.env.NODE_ENV === 'development';
 
 const devProxy = {
@@ -73,6 +76,7 @@ server
       { initializeStore, providers },
       wrapper,
       awaitRender,
+      ErrorPage
     );
   });
 

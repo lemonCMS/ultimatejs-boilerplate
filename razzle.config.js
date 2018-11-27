@@ -104,7 +104,7 @@ module.exports = {
     );
 
     if (dev && target === 'web') {
-      appConfig.plugins.push(new BundleAnalyzerPlugin());
+      // appConfig.plugins.push(new BundleAnalyzerPlugin());
     }
 
     // Ignore locales from moment
@@ -115,9 +115,11 @@ module.exports = {
     );
 
 
-    // appConfig.resolve.extensions.push('css', 'scss');
-    console.log(appConfig.module.rules);
+    if (dev && process.env.DEV_HOSTNAME && process.env.PROTOCOL) {
+      appConfig.output.publicPath = `${process.env.PROTOCOL}${process.env.DEV_HOSTNAME}:${parseInt(process.env.PORT,10) + 1}/`;
+    }
 
+    // appConfig.resolve.extensions.push('css', 'scss');
     return appConfig;
   }
 };

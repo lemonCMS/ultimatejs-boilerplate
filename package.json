@@ -15,7 +15,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.4.2",
     "@fortawesome/free-solid-svg-icons": "^5.4.2",
     "@fortawesome/react-fontawesome": "^0.1.3",
-    "@wicked_query/ultimatejs": "^1.0.0-alpha.3",
+    "@wicked_query/ultimatejs": "^1.0.0-alpha.7",
     "assets-webpack-plugin": "^3.9.7",
     "autoprefixer": "^9.3.1",
     "axios": "^0.18.0",

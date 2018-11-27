@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Helmet from 'react-helmet';
 import {Switch} from 'react-router';
 import {renderRoutes} from 'react-router-config';
-import Menu from '@wicked_query/ultimatejs/lib/admin/Menu/Menu';
+import Menu from '@wicked_query/ultimatejs/lib/admin/Menu';
 import FontAwesome from './FontAwesome';
 import menu from '../../menu';
 import './app.scss';
