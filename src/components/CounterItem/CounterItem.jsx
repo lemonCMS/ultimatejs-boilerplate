@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'multireducer';
 import {increase, decrease} from '../../redux/store/counter';
 
-
 class CounterItem extends Component {
   static propTypes = {
     index: PropTypes.number.isRequired,
